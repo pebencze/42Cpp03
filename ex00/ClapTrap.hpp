@@ -6,7 +6,7 @@
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 19:24:12 by pbencze           #+#    #+#             */
-/*   Updated: 2024/08/18 20:13:18 by pbencze          ###   ########.fr       */
+/*   Updated: 2024/08/19 09:18:13 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,15 @@ class ClapTrap {
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
+
+    void setName(std::string & name);
+    const std::string & getName() const ;
+    void setAttackDamage(unsigned int points);
+    unsigned int getAttackDamage() const;
+    void setHitPoints(unsigned int points);
+    unsigned int getHitPoints() const;
+    void setEnergypoints(unsigned int points);
+    unsigned int getEnergyPoints() const;
 
   private:
     std::string   _name;
