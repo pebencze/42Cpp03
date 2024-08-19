@@ -6,31 +6,31 @@
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 19:24:16 by pbencze           #+#    #+#             */
-/*   Updated: 2024/08/19 10:25:06 by pbencze          ###   ########.fr       */
+/*   Updated: 2024/08/19 10:51:03 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(): _name("default"), _hitPoints(10), _energyPoints(10), _attackDamage(0){
-    std::cout << "default constructor called" << std::endl;
+    std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0){
-    std::cout << "parameterized constructor called" << std::endl;
+    std::cout << "ClapTrap parameterized constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const & src){
-    std::cout << "copy constructor called" << std::endl;
+    std::cout << "ClapTrap copy constructor called" << std::endl;
     *this = src;
 }
 
 ClapTrap::~ClapTrap(){
-    std::cout << "destructor called" << std::endl;
+    std::cout << "ClapTrap destructor called" << std::endl;
 }
 
 ClapTrap & ClapTrap::operator=(ClapTrap const & rhs){
-    std::cout << "assignment operator called" << std::endl;
+    std::cout << "ClapTrap assignment operator called" << std::endl;
      if (&rhs != this){ // check for self-asignment
         this->_attackDamage = rhs._attackDamage;
         this->_energyPoints = rhs._energyPoints;

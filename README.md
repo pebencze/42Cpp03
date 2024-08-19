@@ -23,3 +23,41 @@ Example:
     }
     ```
 
+### Protected Members
+
+Protected members of a class can be accessed from the children.
+
+```c++
+protected:
+    std::string   _name;
+    unsigned int  _hitPoints;
+    unsigned int  _energyPoints;
+    unsigned int  _attackDamage;
+```
+
+### Default Assignment Operator
+
+The compiler has a default assignment operator that we override. It will make more sense later when we use dynamic allocation.
+1.	Default Behavior:
+•	The default assignment operator performs a member-wise assignment. It copies each non-static data member from the source object to the target object.
+2.	Shallow Copy:
+•	For simple data types (e.g., integers, floats), the default operator works fine. However, for classes managing dynamic resources (e.g., pointers), the default operator performs a shallow copy. This can lead to issues like double deletion if two objects end up managing the same resource.
+3.	Automatic Member-Wise Assignment:
+•	If your class does not manage dynamic memory or other resources that need special handling, the default assignment operator is often sufficient.
+
+### Order of Constructors and destructors
+
+**Base class constructor first, derived class constructor next**
+ClapTrap default constructor called </b>
+ScavTrap default constructor called</b>
+ClapTrap parameterized constructor called</b>
+ScavTrap parameterized constructor called</b>
+
+**Derived class destructor first, base class destructor next**
+ScavTrap destructor called</b>
+ClapTrap destructor called</b>
+ScavTrap destructor called</b>
+ClapTrap destructor called</b>
+ClapTrap destructor called</b>
+ClapTrap destructor called</b>
+

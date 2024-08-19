@@ -6,7 +6,7 @@
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 19:24:14 by pbencze           #+#    #+#             */
-/*   Updated: 2024/08/19 09:29:31 by pbencze          ###   ########.fr       */
+/*   Updated: 2024/08/19 10:05:32 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int main(){
     ClapTrap Copy(Clappy);
     std::string copy = "Copy";
     Copy.setName(copy);
+    std::cout << "New ClapTrap: " << Copy.getName() << std::endl;
 
     Clappy.attack("Trappy");
     Trappy.takeDamage(Clappy.getAttackDamage());
