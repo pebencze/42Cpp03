@@ -6,7 +6,7 @@
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 19:24:14 by pbencze           #+#    #+#             */
-/*   Updated: 2024/08/21 17:34:19 by pbencze          ###   ########.fr       */
+/*   Updated: 2024/08/21 19:12:48 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,10 @@ int main(){
             << SuperFrag.getAttackDamage() << " damage points"
             << std::endl;
 	Fraggy.highFivesGuys();
+
+
+	ClapTrap *test1 = new ScavTrap("whwatever");
+	delete test1;
 
     return 0;
 }

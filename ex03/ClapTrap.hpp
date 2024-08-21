@@ -6,7 +6,7 @@
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 19:24:12 by pbencze           #+#    #+#             */
-/*   Updated: 2024/08/19 10:43:47 by pbencze          ###   ########.fr       */
+/*   Updated: 2024/08/21 19:15:09 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class ClapTrap {
     ClapTrap(); //default constructor
     ClapTrap(std::string name); //parameterized constructor
     ClapTrap(ClapTrap const & src); //copy constructor
-    ~ClapTrap(); //destructor
+    virtual ~ClapTrap(); //destructor
 
     ClapTrap & operator=(ClapTrap const & rhs); //operator overload
 

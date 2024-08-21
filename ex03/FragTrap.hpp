@@ -6,7 +6,7 @@
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 14:27:40 by pbencze           #+#    #+#             */
-/*   Updated: 2024/08/21 14:34:54 by pbencze          ###   ########.fr       */
+/*   Updated: 2024/08/21 19:22:33 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 # include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap {
+class FragTrap : virtual public ClapTrap {
     public:
         FragTrap();
         FragTrap(std::string name);
         FragTrap(FragTrap const & src);
-        ~FragTrap();
+        virtual ~FragTrap();
 
         FragTrap & operator=(FragTrap const & rhs);
 

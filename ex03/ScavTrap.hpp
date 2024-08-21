@@ -6,7 +6,7 @@
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 10:20:10 by pbencze           #+#    #+#             */
-/*   Updated: 2024/08/19 11:25:38 by pbencze          ###   ########.fr       */
+/*   Updated: 2024/08/21 19:25:25 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 
 # include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
     public:
         ScavTrap();
         ScavTrap(std::string name);
         ScavTrap(ScavTrap const & src);
-        ~ScavTrap();
-    
+        virtual ~ScavTrap();
+
         ScavTrap & operator=(ScavTrap const & rhs);
         void attack(const std::string& target);
-    
+
         void guardGate();
 };
 
