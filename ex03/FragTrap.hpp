@@ -6,7 +6,7 @@
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 14:27:40 by pbencze           #+#    #+#             */
-/*   Updated: 2024/08/21 19:22:33 by pbencze          ###   ########.fr       */
+/*   Updated: 2024/08/22 12:34:46 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class FragTrap : virtual public ClapTrap {
         FragTrap & operator=(FragTrap const & rhs);
 
         void highFivesGuys(void);
+
 };
 
 #endif

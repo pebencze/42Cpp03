@@ -6,61 +6,61 @@
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 19:24:14 by pbencze           #+#    #+#             */
-/*   Updated: 2024/08/21 19:12:48 by pbencze          ###   ########.fr       */
+/*   Updated: 2024/08/22 12:50:16 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(){
-    ClapTrap Clappy("Clappy");
-    ClapTrap Trappy("Trappy");
-    std::cout << "New ClapTrap: " << Clappy.getName() << " with "
-            << Clappy.getHitPoints() << " hit points, "
-            << Clappy.getEnergyPoints() << " energy points, "
-            << Clappy.getAttackDamage() << " damage points"
-            << std::endl;
 
-    ScavTrap Scavvy;
-    ScavTrap SuperScav("SuperScav");
-    std::string name = "Scavvy";
-    Scavvy.setName(name);
-    std::cout << "New ScavTrap: " << Scavvy.getName() << " with "
-            << Scavvy.getHitPoints() << " hit points, "
-            << Scavvy.getEnergyPoints() << " energy points, "
-            << Scavvy.getAttackDamage() << " damage points "
-            << std::endl;
-    std::cout << "New ScavTrap: " << SuperScav.getName() << " with "
-            << SuperScav.getHitPoints() << " hit points, "
-            << SuperScav.getEnergyPoints() << " energy points, "
-            << SuperScav.getAttackDamage() << " damage points"
-            << std::endl;
+        std::string Diamond_name = "ParameterizedDiamond";
+        std::string Assigned_name = "AssignedDiamond";
+        
+        DiamondTrap Default;
+        DiamondTrap Parameterized(Diamond_name);
+        DiamondTrap Assigned(Parameterized);
 
-    Scavvy.guardGate();
-    Scavvy.attack(SuperScav.getName());
-    Clappy.attack(SuperScav.getName());
+        Assigned.setName(Assigned_name);
+        
+        std::cout << std::endl; 
+        std::cout << "New Diamondtrap: " << Default.getName() << " with "
+                << Default.getHitPoints() << " hit points, "
+                << Default.getEnergyPoints() << " energy points, "
+                << Default.getAttackDamage() << " damage points"
+                << std::endl;
+        std::cout << "New Diamondtrap: " << Parameterized.getName() << " with "
+                << Parameterized.getHitPoints() << " hit points, "
+                << Parameterized.getEnergyPoints() << " energy points, "
+                << Parameterized.getAttackDamage() << " damage points"
+                << std::endl;
+        std::cout << "New Diamondtrap: " << Assigned.getName() << " with "
+                << Assigned.getHitPoints() << " hit points, "
+                << Assigned.getEnergyPoints() << " energy points, "
+                << Assigned.getAttackDamage() << " damage points"
+                << std::endl;
+                
+        std::cout << std::endl;           
+        Default.attack("someone");
+        Parameterized.attack("someone");
+        Assigned.attack("someone");
+        std::cout << "New energy level: " << Assigned.getEnergyPoints() << std::endl;
+        Assigned.beRepaired(20);
+        std::cout << "New hitpoint value: " << Assigned.getHitPoints() << std::endl;
+        std::cout << "New energy level: " << Assigned.getEnergyPoints() << std::endl;
+        Assigned.takeDamage(20);
+        std::cout << "New hitpoint value: " << Assigned.getHitPoints() << std::endl;
+        std::cout << "Energy level: " << Assigned.getEnergyPoints() << std::endl;
+        std::cout << std::endl; 
 
-	FragTrap Fraggy;
-    FragTrap SuperFrag("SuperFrag");
-    name = "Fraggy";
-    Fraggy.setName(name);
-    std::cout << "New FragTrap: " << Fraggy.getName() << " with "
-            << Fraggy.getHitPoints() << " hit points, "
-            << Fraggy.getEnergyPoints() << " energy points, "
-            << Fraggy.getAttackDamage() << " damage points "
-            << std::endl;
-    std::cout << "New FragTrap: " << SuperFrag.getName() << " with "
-            << SuperFrag.getHitPoints() << " hit points, "
-            << SuperFrag.getEnergyPoints() << " energy points, "
-            << SuperFrag.getAttackDamage() << " damage points"
-            << std::endl;
-	Fraggy.highFivesGuys();
-
-
-	ClapTrap *test1 = new ScavTrap("whwatever");
-	delete test1;
-
-    return 0;
+        Assigned.highFivesGuys();
+        Assigned.guardGate();
+        std::cout << std::endl;
+        
+        Parameterized.whoAmI();
+        Default.whoAmI();
+        Assigned.whoAmI();
+        std::cout << std::endl; 
+         
+        return 0;
 }
