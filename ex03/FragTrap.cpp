@@ -6,7 +6,7 @@
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 14:27:38 by pbencze           #+#    #+#             */
-/*   Updated: 2024/10/18 15:49:43 by pbencze          ###   ########.fr       */
+/*   Updated: 2024/10/18 17:12:14 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name){
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;
-
 }
 
 FragTrap::FragTrap(FragTrap const & src){

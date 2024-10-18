@@ -6,7 +6,7 @@
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 17:44:22 by pbencze           #+#    #+#             */
-/*   Updated: 2024/10/18 16:29:59 by pbencze          ###   ########.fr       */
+/*   Updated: 2024/10/18 17:08:53 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ class DiamondTrap : public ScavTrap, public FragTrap {
 		void setName(std::string & name);
 		const std::string & getName() const;
 
-		//void attack(const std::string& target);
-		using ScavTrap::attack;
+		//using ScavTrap::attack;
 		void whoAmI();
 
 	private:
