@@ -6,7 +6,7 @@
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 17:44:24 by pbencze           #+#    #+#             */
-/*   Updated: 2024/08/22 12:48:31 by pbencze          ###   ########.fr       */
+/*   Updated: 2024/10/18 16:49:10 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 DiamondTrap::DiamondTrap() : ClapTrap(){
 	this->_name = "DefaultDiamond";
+	this->_energyPoints = 50;
 	ClapTrap::_name = this->_name + "_clap_name";
 	std::cout << "Diamondtrap default constructor called." << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const std::string &name) : ClapTrap(name + "_clap_name"){
 	this->_name = name;
+	this->_energyPoints = 50;
 	std::cout << "Diamondtrap parameterized constructor called." << std::endl;
 }
 

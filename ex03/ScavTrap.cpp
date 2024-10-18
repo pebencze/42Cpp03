@@ -6,7 +6,7 @@
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 10:20:08 by pbencze           #+#    #+#             */
-/*   Updated: 2024/08/22 12:57:24 by pbencze          ###   ########.fr       */
+/*   Updated: 2024/10/18 16:56:44 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,16 @@
 
 ScavTrap::ScavTrap() : ClapTrap(){
     std::cout << "ScavTrap default constructor called" << std::endl;
+	_hitPoints = 100;
     _energyPoints = 50;
+    _attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name){
     std::cout << "ScavTrap parameterized constructor called" << std::endl;
-   _energyPoints = 50;
+    _hitPoints = 100;
+    _energyPoints = 50;
+    _attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(ScavTrap const & src){
@@ -45,13 +49,13 @@ ScavTrap & ScavTrap::operator=(ScavTrap const & rhs){
 
 void ScavTrap::guardGate(){
     std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
-    
+
 }
 
 void ScavTrap::attack(const std::string& target){
     if (this->_energyPoints > 0 && this->_hitPoints > 0){
         std::cout << "ScavTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
-        this->_energyPoints--;  
+        this->_energyPoints--;
     } else {
         std::cout << "ScavTrap " << this->_name << " is unable to attack." << std::endl;
     }

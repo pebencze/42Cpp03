@@ -45,6 +45,9 @@ The compiler has a default assignment operator that we override. It will make mo
 3.	Automatic Member-Wise Assignment:
 •	If your class does not manage dynamic memory or other resources that need special handling, the default assignment operator is often sufficient.
 
+### Shallow Copy vs. Deep Copy:
+A shallow copy duplicates the original element but doesn't replicate any elements that the original element references. A deep copy duplicates not only the original element but also any elements that the original element references.
+
 ### Order of Constructors and destructors
 
 **Base class constructor first, derived class constructor next**
@@ -64,6 +67,16 @@ ClapTrap destructor called</b>
 ### Diamond Problem
 "The "diamond problem" (sometimes referred to as the "Deadly Diamond of Death") is an ambiguity that arises when two classes B and C inherit from A, and class D inherits from both B and C. If there is a method in A that B and C have overridden, and D does not override it, then which version of the method does D inherit: that of B, or that of C?" - Wikipedia (22.08.24)
 
+multiple inheritance:
+
+ A     A
+ |     |
+ B     C
+  \   /
+   \ /
+    D
+
+diamond inheritance:
     A
    / \
   /   \
