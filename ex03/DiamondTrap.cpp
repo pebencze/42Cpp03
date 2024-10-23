@@ -6,26 +6,26 @@
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 17:44:24 by pbencze           #+#    #+#             */
-/*   Updated: 2024/10/18 17:04:26 by pbencze          ###   ########.fr       */
+/*   Updated: 2024/10/23 15:03:18 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ClapTrap(){
+DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap(){
 	this->_name = "DefaultDiamond";
 	this->_energyPoints = 50;
 	ClapTrap::_name = this->_name + "_clap_name";
 	std::cout << "Diamondtrap default constructor called." << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const std::string &name) : ClapTrap(name + "_clap_name"){
+DiamondTrap::DiamondTrap(const std::string &name) : ClapTrap(name + "_clap_name"), ScavTrap(), FragTrap(){
 	this->_name = name;
 	this->_energyPoints = 50;
 	std::cout << "Diamondtrap parameterized constructor called." << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &other){
+DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other._name + "_clap_name"), ScavTrap(), FragTrap(){
 	*this = other;
 	std::cout << "Diamondtrap copy constructor called." << std::endl;
 }

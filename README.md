@@ -87,3 +87,12 @@ diamond inheritance:
    \ /
     D
 
+### Update
+Good practice to call the constructor(s) within the copy constructor function.
+
+```c++
+DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other._name + "_clap_name"), ScavTrap(), FragTrap(){
+	*this = other;
+	std::cout << "Diamondtrap copy constructor called." << std::endl;
+}
+```

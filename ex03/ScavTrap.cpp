@@ -6,7 +6,7 @@
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 10:20:08 by pbencze           #+#    #+#             */
-/*   Updated: 2024/10/18 16:56:44 by pbencze          ###   ########.fr       */
+/*   Updated: 2024/10/23 15:03:30 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name){
     _attackDamage = 20;
 }
 
-ScavTrap::ScavTrap(ScavTrap const & src){
+ScavTrap::ScavTrap(ScavTrap const & src) : ClapTrap(){
     std::cout << "ScavTrap copy constructor called" << std::endl;
     *this = src;
 }

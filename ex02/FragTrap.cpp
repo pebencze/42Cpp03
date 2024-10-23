@@ -6,7 +6,7 @@
 /*   By: pbencze <pbencze@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 14:27:38 by pbencze           #+#    #+#             */
-/*   Updated: 2024/08/21 17:38:32 by pbencze          ###   ########.fr       */
+/*   Updated: 2024/10/23 15:01:22 by pbencze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name){
 
 }
 
-FragTrap::FragTrap(FragTrap const & src){
+FragTrap::FragTrap(FragTrap const & src) : ClapTrap(){
 	std::cout << "FragTrap copy constructor called" << std::endl;
 	*this = src;
 }
